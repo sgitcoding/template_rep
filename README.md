@@ -1,3 +1,3 @@
-# iris-proba
+# Simple Iris model using XGBoost
 
-XGBClassifier model with predict_proba
+> Make sure to build the model with xgboost version 0.82 (requirements.txt)
