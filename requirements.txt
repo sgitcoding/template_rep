@@ -1,2 +1,2 @@
-sklearn
-xgboost==0.82
+sklearn==0.20.3
+shap==0.36.0
