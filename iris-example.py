@@ -3,6 +3,7 @@ from sklearn.datasets import load_iris
 import os
 import dill
 from shap import KernelExplainer
+import numpy as np
 
 
 model_dir = "./model"
@@ -19,7 +20,8 @@ xgbclass.fit(X,y)
 model_file = os.path.join((model_dir), BST_FILE)
 xgbclass.save_model(model_file)
 
-explainer = KernelExplainer(xgbclass.predict, X[:100])
+predict_fn = lambda x: xgbclass.predict(np.array(x))
+explainer = KernelExplainer(predict_fn, X[:100])
 explainer.model = None
 with open(os.path.join(exp_dir, SHAP_FILE), "wb") as f:
     dill.dump(explainer, f)
