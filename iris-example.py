@@ -19,7 +19,7 @@ xgbclass.fit(X,y)
 model_file = os.path.join((model_dir), BST_FILE)
 xgbclass.save_model(model_file)
 
-explainer = KernelExplainer(xgbclass.predict_proba, X[:100])
+explainer = KernelExplainer(xgbclass.predict, X[:100])
 explainer.model = None
 with open(os.path.join(exp_dir, SHAP_FILE), "wb") as f:
     dill.dump(explainer, f)
