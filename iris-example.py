@@ -6,6 +6,15 @@ from shap import KernelExplainer
 import numpy as np
 
 
+class KernelExplainer(KernelExplainer):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+    def shap_values(self, X, **kwargs):
+        vals = super().shap_values(X, **kwargs)
+        return [val.tolist() for val in vals]
+
+
 model_dir = "./model"
 BST_FILE = "model.bst"
 
