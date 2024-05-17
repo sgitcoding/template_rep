@@ -1,0 +1,30 @@
+{
+    "features": [
+        "sepal_width",
+        "sepal_length",
+        "petal_width",
+        "petal_length"
+    ],
+    "predictionClasses": {
+        "0": "setosa",
+        "1": "versicolor",
+        "2": "virginica"
+    },
+    "problemType": "classification",
+    "exampleInput": {"instances": [[3.5, 5.1, 1.4, 0.2]]},
+    "exampleOutput": {
+        "predictions": [
+          [
+            0.996802806854248,
+            0.0023831066209822893,
+            0.0008141328580677509
+          ]
+        ]
+    },
+    "inputTensorShape": [
+        4
+    ],
+    "outputTensorShape": [
+        3
+    ]
+}
